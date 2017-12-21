@@ -1,3 +1,12 @@
+```
+Build a new app:
+$ oc new-app https://github.com/appuio/example-php-sti-helloworld.git --name example	
+Create a route for the service:
+$ oc expose svc example	
+Patch a new TLS struct for the route:
+oc patch route example -p '{"spec":{"tls":{"termination":"edge"}}}'
+```
+
 # PHP source to image Helloworld Example
 
 This is an example php application, which can be deployed to APPUiO using the following commands
